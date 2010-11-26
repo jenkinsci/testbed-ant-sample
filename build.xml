@@ -1,5 +1,33 @@
-<project default="hello">
-  <target name="hello">
-    <echo>Hello world</echo>
+<project default="jar">
+  <target name="compile">
+    <mkdir dir="build/classes"/>
+    <javac srcdir="src" destdir="build/classes"/>
+  </target>
+  <target name="jar" depends="compile">
+    <jar file="build/app.jar">
+      <fileset dir="build/classes"/>
+    </jar>
+  </target>
+  <target name="test" depends="compile">
+    <mkdir dir="build/test-classes"/>
+    <javac srcdir="test" destdir="build/test-classes">
+      <classpath>
+        <pathelement path="build/classes"/>
+        <fileset dir="lib" includes="*.jar"/>
+      </classpath>
+    </javac>
+
+    <mkdir dir="build/test-reports"/>
+    <junit printsummary="true">
+      <classpath>
+        <pathelement path="build/test-classes"/>
+        <pathelement path="build/classes"/>
+        <fileset dir="lib" includes="*.jar"/>
+      </classpath>
+      <formatter type="xml"/>
+      <batchtest todir="build/test-reports">
+        <fileset dir="test" includes="**/*Test.java"/>
+      </batchtest>
+    </junit>
   </target>
 </project>
