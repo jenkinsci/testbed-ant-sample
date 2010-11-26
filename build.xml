@@ -30,4 +30,13 @@
       </batchtest>
     </junit>
   </target>
+  <target name="javadoc">
+    <mkdir dir="build/javadoc"/>
+    <javadoc destdir="build/javadoc">
+      <fileset dir="src"/>
+    </javadoc>
+  </target>
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
 </project>
