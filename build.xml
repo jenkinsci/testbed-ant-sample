@@ -1,6 +1,8 @@
 <project default="all">
   <target name="compile"> <mkdir dir="build/classes"/>
-    <javac srcdir="src" destdir="build/classes"/>
+    <javac srcdir="src" destdir="build/classes">
+      <compilerArg value="-Xlint"/>
+    </javac>
   </target>
   <target name="jar" depends="compile">
     <jar file="build/app.jar">
