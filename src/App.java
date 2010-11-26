@@ -13,4 +13,9 @@ public class App {
         List a = new ArrayList();
         a.add("foo");
     }
+
+    // we'll be testing this method from tests
+    public int add(int x, int y) {
+        return x+y;
+    }
 }
