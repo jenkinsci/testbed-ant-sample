@@ -1,0 +1,4 @@
+This is a very small but somewhat real Ant project.
+It can produce a jar, generate a javadoc, executes unit tests, and so on.
+
+This is useful for demoing basics of Hudson.
