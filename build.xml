@@ -1,4 +1,4 @@
-<project default="jar">
+<project default="all">
   <target name="compile">
     <mkdir dir="build/classes"/>
     <javac srcdir="src" destdir="build/classes"/>
@@ -39,4 +39,5 @@
   <target name="clean">
     <delete dir="build"/>
   </target>
+  <target name="all" depends="jar,test,javadoc"/>
 </project>
