@@ -6,7 +6,7 @@ public class App {
     }
 
     public boolean thisCausesFindBugWarnings(String s) {
-        return "abc"==s;
+        return "abc".equals(s);
     }
 
     public void thisCreatesCompilerWarnings() {
